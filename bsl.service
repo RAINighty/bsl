@@ -1,0 +1,15 @@
+[Unit]
+Description=BSL Bilibili StreetLight
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=bsl
+WorkingDirectory=/opt/bsl
+ExecStart=/opt/bsl/bsl
+Restart=always
+RestartSec=5
+Environment=GIN_MODE=release
+
+[Install]
+WantedBy=multi-user.target
