@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  host: "0.0.0.0"
+
+database:
+  url: "postgres://bsl:password@localhost:5432/bsl?sslmode=disable"
+  max_connections: 20
+
+bilibili:
+  cookie: ""
+
+onebot:
+  ws_path: "/onebot"
+
+collector:
+  heartbeat_interval: 30
+  reconnect_backoff_max: 60
+  stats_flush_interval: 60
