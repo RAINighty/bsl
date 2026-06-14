@@ -85,7 +85,7 @@ func (pw *PacketWriter) Write(op uint32, body []byte) error {
 	totalLen := headerBytes + len(body)
 	buf := make([]byte, totalLen)
 	binary.BigEndian.PutUint32(buf[0:4], uint32(totalLen))
-	binary.BigEndian.PutUint16(buf[4:6], headerBytes)
+	binary.BigEndian.PutUint16(buf[4:6], 0) // no additional header for JSON packets
 	binary.BigEndian.PutUint16(buf[6:8], ProtoJSON)
 	binary.BigEndian.PutUint32(buf[8:12], op)
 	binary.BigEndian.PutUint32(buf[12:16], 1)
